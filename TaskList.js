@@ -6,9 +6,14 @@ import {
   ListView
 } from 'react-native';
 
+import TaskRow from './TaskRow'
+
 var styles = StyleSheet.create({
   container: {
-    paddingTop: 40
+    paddingTop: 40,
+    backgroundColor: '#f7f7f7',
+    flex: 1,
+    justifyContent: 'flex-start'
   }
 });
 
@@ -26,7 +31,7 @@ export default class TaskList extends React.Component{
   }
 
   renderRow(todo){
-      return <Text>{todo.task}</Text>;
+    return (<TaskRow todo={todo}/>);
   }
 
   render(){
